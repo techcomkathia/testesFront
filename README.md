@@ -2,10 +2,6 @@
 
 Projeto de exemplo com páginas, componentes e configuração básica para testar interações usando Cypress.
 
-## Onde estão os testes
-
-- Os testes E2E ficam em `cypress/e2e`.
-- Fixtures em `cypress/fixtures`.
 
 ## Comandos úteis
 
@@ -13,12 +9,6 @@ Projeto de exemplo com páginas, componentes e configuração básica para testa
 
 ```
 npx cypress open
-```
-
-- Executar os testes em modo headless:
-
-```
-npx cypress run
 ```
 
 ## Exercícios de Testes (sugestões)
