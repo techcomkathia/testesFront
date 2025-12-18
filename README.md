@@ -1,56 +1,50 @@
+# testeCypress
 
-# 🧪 Atividade: Testes de Navegação com Cypress
+Projeto de exemplo com páginas, componentes e configuração básica para testar interações usando Cypress.
 
-Este exercício tem como objetivo validar a navegação entre páginas da aplicação utilizando o Cypress. Para cada item abaixo, escreva o teste correspondente no Cypress ou execute a verificação manual se solicitado.
-Instale todos os módulos do node com:
-```bash
-   npm install
+## Onde estão os testes
+
+- Os testes E2E ficam em `cypress/e2e`.
+- Fixtures em `cypress/fixtures`.
+
+## Comandos úteis
+
+- Abrir a interface do Cypress (interativo):
+
 ```
-Instale o Cypress com : 
-
-```bash
-   npm install cypress 
-``` 
-Levante o servidor para a apliação REACT ficar disponível.
-Faça a configuração inicial com o comando:
-
-```bash
-   npx cypress open 
+npx cypress open
 ```
 
+- Executar os testes em modo headless:
+
+```
+npx cypress run
+```
+
+## Exercícios de Testes (sugestões)
+
+Abaixo há exercícios simples que você pode transformar em testes E2E com Cypress. Cada item descreve ações que verificam renderização, preenchimento, cliques e mensagens.
+
+- **Renderização do cabeçalho:** verificar se o componente de navegação é renderizado e contém links para `Página 1`, `Página 2`, `Página 3` e `Carrinho`.
+
+- **Navegação entre páginas:** navegar para `/page2` e `/page3` e checar que o conteúdo esperado aparece (títulos, textos ou componentes específicos).
+
+- **Formulário (preenchimento e submissão):** na página com o `Form.jsx` (se existir): preencher campos `nome`, `email` e `senha`, submeter e verificar que a ação esperada ocorre (ex.: modal de sucesso, redirecionamento ou mensagem de confirmação).
+
+- **ProductCard - renderização e interação:** checar se o `ProductCard` mostra imagem, título e preço; clicar em `Adicionar ao Carrinho` e verificar se o `SuccessModal` aparece e (opcional) se redireciona para `/cart`.
+
+
+- **Interações com cliques:** testar botões e links (ex.: remover item do carrinho, continuar comprando, fechar modal) e validar efeitos visuais ou mudanças de rota/estado.
+
+- **Mensagens e validações:** para campos obrigatórios ou ações que mostram mensagens (ex.: "Seu carrinho está vazio"), escrever testes que forçam esses estados e verificam a mensagem exibida.
+
+
+## Boas práticas para escrever os testes
+
+- Use seletores estáveis: prefira `data-cy` ou `data-testid` quando possível.
+- Evite depender apenas de índices de elementos; busque textos, labels e atributos.
+
 
 ---
 
-## ✅ 1. Navegar para a Página 1
 
-- Acesse a página principal do site ("/").
-- Clique no link ou botão com o texto "Página 1".
-- Verifique se a URL permanece a mesma (ou seja, continua com apenas "/").
-
----
-
-## ✅ 2. Navegar para a Página 2
-
-- Acesse a página principal do site ("/").
-- Clique no link ou botão com o texto "Página 2".
-- Verifique se a URL passou a conter o trecho "/page2".
-
----
-
-## ✅ 3. Navegar para a Página 3
-
-- Acesse a página principal do site ("/").
-- Clique no link ou botão com o texto "Página 3".
-- Verifique se a URL passou a conter o trecho "/page3".
-
----
-
-## ✅ 4. Navegar para a página do Carrinho
-
-- Acesse a página principal do site ("/").
-- Clique no link ou botão com o texto "Carrinho".
-- Verifique se a URL passou a conter o trecho "/cart".
-
----
-
-💡 Dica: Para todos os testes, utilize os comandos do Cypress como cy.visit(), cy.contains(), e cy.url().should().
